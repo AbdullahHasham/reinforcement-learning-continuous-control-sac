@@ -1,0 +1,22 @@
+environment: "MountainCarContinuous-v0"
+algorithm: "PPO"
+timesteps: 200000
+checkpoint_freq: 50000
+num_trials: 3
+
+# Custom reward function parameters (same as config_custom.yaml for fair comparison)
+reward_params:
+  position_weight: 1.0
+  velocity_weight: 10.0
+  height_weight: 1.0
+  goal_proximity_weight: 5.0
+
+# PPO-specific hyperparameters tuned for MountainCarContinuous
+n_steps: 2048
+batch_size: 64
+learning_rate: 0.0003
+gamma: 0.99
+gae_lambda: 0.95
+clip_range: 0.2
+ent_coef: 0.0
+n_epochs: 10
